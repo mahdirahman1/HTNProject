@@ -17,7 +17,8 @@ class EventForm extends React.Component{
             eventName: '',
             eventType: '',
             eventDate: '',
-            eventAccess: ''
+            eventAccess: '',
+            eventDescription: ''
         }
     }
 
@@ -33,9 +34,12 @@ class EventForm extends React.Component{
     handleEventAccessChange = (e) => {
         this.setState({eventAccess: e.target.value})
     }
+    handleEventDescriptionChange = (e) => {
+        this.setState({eventDescription: e.target.value})
+    }
 
     handleSubmit = (e) => {
-        alert(`${this.state.eventName} ${this.state.eventType} ${this.state.eventDate} ${this.state.eventAccess}`)
+        alert(`${this.state.eventName} ${this.state.eventType} ${this.state.eventDate} ${this.state.eventAccess} ${this.state.eventDescription}`)
         e.preventDefault();
     }
 
@@ -45,6 +49,11 @@ class EventForm extends React.Component{
                 <FormGroup>
                     <Form.Label style={{ color: "white" }}>Event name: </Form.Label>
                     <Form.Control type="text" placeholder="Enter event name" value={this.state.eventName} onChange={this.handleEventNameChange}></Form.Control>
+                </FormGroup>
+
+                <FormGroup>
+                    <Form.Label style={{ color: "white" }}>Event description: </Form.Label>
+                    <Form.Control as="textarea" placeholder="Enter event description" value={this.state.eventDescription} onChange={this.handleEventDescriptionChange} style={{ height: '100px' }}/>
                 </FormGroup>
 
                 <FormGroup>
