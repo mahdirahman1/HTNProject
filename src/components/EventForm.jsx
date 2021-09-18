@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from "styled-components";
 import "bootstrap/dist/css/bootstrap.css";
 import Form from "react-bootstrap/Form";
@@ -39,6 +39,13 @@ class EventForm extends React.Component{
     }
 
     handleSubmit = (e) => {
+        // data = {
+        //     evetName: this.state.eventName,
+        //     eventType: this.state.eventType,
+        //     eventDate: this.state.eventDate,
+        //     eventAccess: this.state.eventAccess,
+        //     eventDescription: this.state.eventDescription
+        // }
         alert(`${this.state.eventName} ${this.state.eventType} ${this.state.eventDate} ${this.state.eventAccess} ${this.state.eventDescription}`)
         e.preventDefault();
     }
