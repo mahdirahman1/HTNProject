@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   margin: 5% 10%;
@@ -35,9 +35,16 @@ const Home = (props) => {
       <ButtonWrapper>
         {/* <StyledButton>Host Event</StyledButton> */}
         {/* <StyledButton>Join Event</StyledButton> */}
-        <StyledButton><Link style={{ textDecoration: 'none', color: 'red' }} to={'/host'}>Host Event</Link></StyledButton>
-        <StyledButton><Link style={{ textDecoration: 'none', color: 'red' }} to={'/join'}>Join Event</Link></StyledButton>
-        
+        <StyledButton>
+          <Link style={{ textDecoration: "none", color: "red" }} to={"/host"}>
+            Host Event
+          </Link>
+        </StyledButton>
+        <StyledButton>
+          <Link style={{ textDecoration: "none", color: "red" }} to={"/events"}>
+            Join Event
+          </Link>
+        </StyledButton>
       </ButtonWrapper>
     </Wrapper>
   );
