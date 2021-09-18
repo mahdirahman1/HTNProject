@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
+import styled from "styled-components";
+import "bootstrap/dist/css/bootstrap.css";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
-// const EventForm = (props) => (
-
-//     const [state, setstate] = useState(initialState);
-
-//     <div>
-//     <p>EVENT FORM (type of event i.e. wedding or concert, name, date, time, location, private or public)</p>
-//     </div>
-// )
+const FormGroup = styled(Form.Group)`
+  margin: 1rem;
+`;
 
 class EventForm extends React.Component{
 
@@ -42,37 +41,43 @@ class EventForm extends React.Component{
 
     render(){
         return (
-            <form onSubmit={this.handleSubmit}>
-                <div>
-                    <label>Event name: </label>
-                    <input type="text" value={this.state.eventName} onChange={this.handleEventNameChange}></input>
-                </div>
+            <Form onSubmit={this.handleSubmit}>
+                <FormGroup>
+                    <Form.Label style={{ color: "white" }}>Event name: </Form.Label>
+                    <Form.Control type="text" placeholder="Enter event name" value={this.state.eventName} onChange={this.handleEventNameChange}></Form.Control>
+                </FormGroup>
 
-                <div>
-                    <label>Type of event: </label>
-                    <select value={this.state.eventType} onChange={this.handleEventTypeChange}>
+                <FormGroup>
+                    <Form.Label style={{ color: "white" }}>Type of event: </Form.Label>
+                    <Form.Select aria-label="Default select example" value={this.state.eventType} onChange={this.handleEventTypeChange}>
                         <option value="wedding">Wedding</option>
                         <option value="concert">Concert</option>
                         <option value="funeral">Funeral</option>
-                    </select>
-                </div>
+                    </Form.Select>
+                </FormGroup>
 
-                <div>
-                    <label>Date of event: </label>
-                    <input type="date" value={this.state.eventDate} onChange={this.handleEventDateChange}></input>
-                </div>
+                <FormGroup>
+                    <Form.Label style={{ color: "white" }}>Event date: </Form.Label>
+                    <Form.Control type="date" value={this.state.eventDate} onChange={this.handleEventDateChange}></Form.Control>
+                </FormGroup>
 
-                <div>
-                      <input type="radio" id="public" name="access" value="public" onChange={this.handleEventAccessChange}/>
-                      <label for="public">Public</label>
+                <FormGroup>
+                    {['radio'].map((type) => (
+                    <div key={`default-${type}`} className="mb-3">
+                    <Form.Check 
+                        type="radio" id="public" label="Public" name="access"  value="public" onChange={this.handleEventAccessChange}
+                    />
+                    <Form.Check 
+                        type="radio" id="private" label="Private" name="access" value="private" onChange={this.handleEventAccessChange}
+                    />
+                    </div>
+                ))}
+                </FormGroup>
 
-                      <input type="radio" id="private" name="access" value="private" onChange={this.handleEventAccessChange}/>
-                      <label for="private">Private</label>
-                </div>
-
-
-                <button type="submit">Create Event</button>
-            </form>
+                <FormGroup>
+                    <Button style={{ width: "100%" }} variant="primary" type="submit">Create Event</Button>
+                </FormGroup>
+            </Form>
         )
     }
 
