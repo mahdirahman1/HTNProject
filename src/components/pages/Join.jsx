@@ -1,5 +1,5 @@
 import React from 'react';
-import Subcomponent from './Subcomponent';
+import Subcomponent from '../Subcomponent';
 
 const Join = (props) => (
   <div className=''>

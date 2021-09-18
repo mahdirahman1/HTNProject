@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import LoginForm from "../forms/LoginForm";
+import SignupForm from "../forms/SignupForm";
 
 const Wrapper = styled.div`
   margin: 5% 10%;
@@ -13,29 +15,48 @@ const Title = styled.h1`
 
 const ButtonWrapper = styled.div`
   text-align: center;
-  margin: 10rem 0;
+  margin: 5% 0;
 `;
 
 const StyledButton = styled.button`
-  margin: 2rem 0;
+  margin: 1rem 0.5rem;
   font-size: 2rem;
   padding: 1rem;
   width: 15rem;
-  border-radius: 1.5rem;
   border: none;
-  color: red;
+  color: ${(props) => (props.option == props.number ? "red" : "white")};
   cursor: pointer;
+  border-bottom: 1px solid red;
+  background: none;
+
+  &:hover {
+    color: red;
+  }
+`;
+
+const FormWrapper = styled.div`
+  margin: 5% 30%;
 `;
 
 const Auth = (props) => {
+  //1 for login, 2 for sign up
+  const [option, setoption] = useState(1);
+
   return (
     <Wrapper>
       <Title>Event Manager</Title>
       <ButtonWrapper>
-        <StyledButton>Log In</StyledButton>
-        <div />
-        <StyledButton>Sign Up</StyledButton>
+        <StyledButton number={1} option={option} onClick={() => setoption(1)}>
+          Log In
+        </StyledButton>
+        <StyledButton number={2} option={option} onClick={() => setoption(2)}>
+          Sign Up
+        </StyledButton>
       </ButtonWrapper>
+      <FormWrapper>
+        {option == 1 && <LoginForm />}
+        {option == 2 && <SignupForm />}
+      </FormWrapper>
     </Wrapper>
   );
 };

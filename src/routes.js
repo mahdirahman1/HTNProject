@@ -3,8 +3,8 @@ import { Route, Switch } from "react-router-dom";
 import App from "./components/App";
 import Home from "./components/pages/Home";
 import Auth from "./components/pages/Auth";
-import Join from "./components/Join";
-import Host from "./components/Host";
+import Join from "./components/pages/Join";
+import Host from "./components/pages/Host";
 
 const routes = (
   <App>
