@@ -44,7 +44,7 @@ const Auth = (props) => {
 
   return (
     <Wrapper>
-      <Title>Event Manager</Title>
+      <Title>VenueBrite</Title>
       <ButtonWrapper>
         <StyledButton number={1} option={option} onClick={() => setoption(1)}>
           Log In

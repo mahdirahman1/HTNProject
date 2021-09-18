@@ -31,7 +31,7 @@ const StyledButton = styled.button`
 const Home = (props) => {
   return (
     <Wrapper>
-      <Title>Event Manager</Title>
+      <Title>VenueBrite</Title>
       <ButtonWrapper>
         {/* <StyledButton>Host Event</StyledButton> */}
         {/* <StyledButton>Join Event</StyledButton> */}
