@@ -17,25 +17,27 @@ const ButtonWrapper = styled.div`
 `;
 
 const StyledButton = styled.button`
-  margin: 4rem;
+  margin: 2rem 0;
   font-size: 2rem;
   padding: 1rem;
+  width: 15rem;
   border-radius: 1.5rem;
   border: none;
   color: red;
   cursor: pointer;
 `;
 
-const Home = (props) => {
+const Auth = (props) => {
   return (
     <Wrapper>
       <Title>Event Manager</Title>
       <ButtonWrapper>
-        <StyledButton>Host Event</StyledButton>
-        <StyledButton>Join Event</StyledButton>
+        <StyledButton>Log In</StyledButton>
+        <div />
+        <StyledButton>Sign Up</StyledButton>
       </ButtonWrapper>
     </Wrapper>
   );
 };
 
-export default Home;
+export default Auth;
