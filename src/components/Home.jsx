@@ -34,8 +34,8 @@ const Home = (props) => {
       <ButtonWrapper>
         {/* <StyledButton>Host Event</StyledButton> */}
         {/* <StyledButton>Join Event</StyledButton> */}
-        <StyledButton><Link to={'/host'}>Host Event</Link></StyledButton>
-        <StyledButton><Link to={'/join'}>Join Event</Link></StyledButton>
+        <StyledButton><Link style={{ textDecoration: 'none', color: 'red' }} to={'/host'}>Host Event</Link></StyledButton>
+        <StyledButton><Link style={{ textDecoration: 'none', color: 'red' }} to={'/join'}>Join Event</Link></StyledButton>
         
       </ButtonWrapper>
     </Wrapper>
