@@ -2,7 +2,7 @@ import React from "react";
 import Subcomponent from "../Subcomponent";
 import { Route, Switch } from "react-router-dom";
 
-const Join = (props) => (
+const AllEvents = (props) => (
   <div className="" style={{ color: "white" }}>
     <h1>Current events</h1>
     <Subcomponent
@@ -26,4 +26,4 @@ const Join = (props) => (
   </div>
 );
 
-export default Join;
+export default AllEvents;
