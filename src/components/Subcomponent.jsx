@@ -1,7 +1,11 @@
 import React from 'react';
 
-export default (props) => (
+const Subcomponent = (props) => (
   <div className='subcomponent'>
-    Subcomponent
+    <p><strong>{props.event}</strong></p>
+    <p>{props.date} at {props.time}</p>
+    <p>{props.attendees} people attending</p>
   </div>
 )
+
+export default Subcomponent;

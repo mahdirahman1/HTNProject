@@ -1,8 +1,9 @@
 import React from 'react';
+import Subcomponent from './Subcomponent';
 
 const Home = (props) => (
   <div className='home'>
-    Home
+    <p>home</p>
   </div>
 )
 
