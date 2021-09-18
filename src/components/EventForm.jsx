@@ -68,7 +68,13 @@ class EventForm extends React.Component{
                     <Form.Select aria-label="Default select example" value={this.state.eventType} onChange={this.handleEventTypeChange}>
                         <option value="wedding">Wedding</option>
                         <option value="concert">Concert</option>
-                        <option value="funeral">Funeral</option>
+                        <option value="birthdayParty">Birthday Party</option>
+                        <option value="techConference">Tech Conference</option>
+                        <option value="seminarOrTalk">Seminar/Talk</option>
+                        <option value="sports">Sports game</option>
+                        <option value="dinnerOrGala">Dinner/Gala</option>
+                        <option value="touristAttraction">Tourist Attraction</option>
+                        <option value="other">Other</option>
                     </Form.Select>
                 </FormGroup>
 
