@@ -6,6 +6,7 @@ import Auth from "./components/pages/Auth";
 import Host from "./components/pages/Host";
 import AllEvents from "./components/pages/AllEvents";
 import Join from "./components/Join";
+import Event from "./components/pages/Event";
 
 const routes = (
   <App>
@@ -15,6 +16,8 @@ const routes = (
       <Route path="/events" component={AllEvents} />
       <Route path="/host" component={Host} />
       <Route path="/join" component={Join} />
+      {/* <Route path="/events/:id" component={Event} /> */}
+
     </Switch>
   </App>
 );
