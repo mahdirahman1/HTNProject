@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
 
-
 export default class AppWrapper extends React.Component {
+
   render() {
     return (
       <div className="app-container">
@@ -13,3 +13,4 @@ export default class AppWrapper extends React.Component {
     );
   }
 }
+

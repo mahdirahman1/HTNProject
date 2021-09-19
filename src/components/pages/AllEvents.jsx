@@ -8,7 +8,12 @@ import { Route, Switch, Link } from "react-router-dom";
 import Event from "./Event";
 import {BrowserRouter as Router} from "react-router-dom";
 
-const DUMMY_EVENTS = [
+const Wrapper = styled.div`
+  margin: 4% 10%;
+`;
+
+const AllEvents = (props) => {
+  const DUMMY_EVENTS = [
   {
     id: "e1",
     event: "Google I/O",
@@ -59,11 +64,13 @@ const DUMMY_EVENTS = [
   },
 ];
 
-const Wrapper = styled.div`
-  margin: 4% 10%;
-`;
-
-const AllEvents = (props) => {
+  const [events, setEvents] = useState(DUMMY_EVENTS);  
+  const addNewEventHandler = (event) =>{
+    setEvents(prevEvents => {
+      return [event, ...prevEvents]
+    })
+  } 
+  
   return (
     <Router>
       <Wrapper>
@@ -71,9 +78,10 @@ const AllEvents = (props) => {
           <h1 style={{ textAlign: "center", margin: "3rem" }}>
             Current events to join
           </h1>
+          {/* <Host/> */}
           <Container>
             <Row>
-              {DUMMY_EVENTS.map((currentEvent) => (
+              {events.map((currentEvent) => (
                 <Col xl={4} lg={6} md={6}>
                   <Link to={'/events/' + currentEvent.id} style={{textDecoration: "none"}}><Subcomponent
                     event={currentEvent.event}
@@ -95,7 +103,7 @@ const AllEvents = (props) => {
               ))}
             </Row>
               <Route exact path="/events/:id" render={({match}) => (
-                <Event event={DUMMY_EVENTS.find(p => p.id === match.params.id)}/>
+                <Event event={events.find(p => p.id === match.params.id)}/>
               )} />
           </Container>
         </div>

@@ -42,17 +42,20 @@ class EventForm extends React.Component {
   };
 
   handleSubmit = (e) => {
-    // data = {
-    //     evetName: this.state.eventName,
-    //     eventType: this.state.eventType,
-    //     eventDate: this.state.eventDate,
-    //     eventAccess: this.state.eventAccess,
-    //     eventDescription: this.state.eventDescription
-    // }
-    alert(
-      `${this.state.eventName} ${this.state.eventType} ${this.state.eventDate} ${this.state.eventAccess} ${this.state.eventDescription}`
-    );
-    e.preventDefault();
+    // e.preventDefault();
+    const newEventdata = {
+        evetName: this.state.eventName,
+        eventType: this.state.eventType,
+        eventDate: new Date(this.state.eventDate),
+        eventAccess: this.state.eventAccess,
+        eventDescription: this.state.eventDescription
+    }
+    props.onSaveData(newEventdata);
+    console.log(newEventdata);
+    // e.preventDefault();
+    // alert(
+    //   `${this.state.eventName} ${this.state.eventType} ${this.state.eventDate} ${this.state.eventAccess} ${this.state.eventDescription}`
+    // );
   };
 
   render() {
