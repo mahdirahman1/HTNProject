@@ -3,6 +3,7 @@ import styled from "styled-components";
 import "bootstrap/dist/css/bootstrap.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 const FormGroup = styled(Form.Group)`
   margin: 1rem;
@@ -11,9 +12,7 @@ const FormGroup = styled(Form.Group)`
 const LoginForm = () => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
-  const submitHandler = () => {
-    alert(`${email} ${password}`);
-  };
+  const submitHandler = () => {};
 
   const onChangeHandlePassword = (e) => {
     setpassword(e.target.value);
@@ -40,9 +39,11 @@ const LoginForm = () => {
         />
       </FormGroup>
       <FormGroup>
-        <Button style={{ width: "100%" }} variant="primary" type="submit">
-          Login
-        </Button>
+        <Link to={"/events"}>
+          <Button style={{ width: "100%" }} variant="primary" type="submit">
+            Login
+          </Button>
+        </Link>
       </FormGroup>
     </Form>
   );
